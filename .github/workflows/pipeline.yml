@@ -17,3 +17,9 @@ jobs:
       - name: Directory content
         run: |
           ls -l
+      - name: npm install backend
+        run: cd ./phonebook-backend && npm install
+      - name: npm install frontend
+        run: cd ../phonebook-frontend && npm install
+      - name: npm lint
+        run: cd ../phonebook-backend && npm run lint
