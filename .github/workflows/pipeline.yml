@@ -32,5 +32,5 @@ jobs:
         uses: cypress-io/github-action@v4
         with:
           build: cd ./phonebook-backend && npm run build:ui
-          start: npm run start
+          start: cd ./phonebook-backend && npm run start
           wait-on: 'http://localhost:3001'
