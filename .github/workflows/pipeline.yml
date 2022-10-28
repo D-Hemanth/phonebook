@@ -29,8 +29,7 @@ jobs:
       - name: build
         run: cd ./phonebook-backend && npm run build:ui
       - name: e2e tests
-        run: cd ./phonebook-backend
-        uses: cypress-io/github-action@v4
+        uses: cd ./phonebook-backend && cypress-io/github-action@v4
         with:
           build: npm run build:ui
           start: npm run start
