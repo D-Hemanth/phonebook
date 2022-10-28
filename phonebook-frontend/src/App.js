@@ -72,7 +72,7 @@ const App = () => {
             setNotificationMessage(null)
           }, 5000)
         })
-        .catch((error) => {
+        .catch(() => {
           // set message color to red for errors in the phonebook app
           setMessageColor('red')
           // Add a improved notification message when you delete a person when the phonebook app is open in two separate tabs
