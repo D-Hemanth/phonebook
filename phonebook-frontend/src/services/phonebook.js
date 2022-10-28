@@ -26,5 +26,4 @@ const update = (id, newNumberObject) => {
 }
 
 // export the getAll, create  as an object of any name i.e. here in app - phonebookService to use these methods in app
-// eslint-disable-next-line import/no-anonymous-default-export
 export default { getAll, create, deleteContact, update }
