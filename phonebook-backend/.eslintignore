@@ -1,0 +1,2 @@
+# Add to build files to be ignored during the eslint operation
+build

@@ -1,0 +1,57 @@
+POST http://localhost:3001/api/persons HTTP/1.1
+content-type: application/json
+
+{
+    "name": "hemanth",
+    "number": "123-12345"
+}
+
+### validation request check for min name length of 3
+
+POST http://localhost:3001/api/persons HTTP/1.1
+content-type: application/json
+
+{
+    "name": "ju",
+    "number": "123-456-789"
+}
+
+### failed validation request check for min number length of 8 & number format DD-DDD... or DDD-DDD,,,
+
+POST http://localhost:3001/api/persons HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Hemanth",
+    "number": "12-12345"
+}
+
+### success validation request check for min number length of 8 & number format DD-DDD... 
+
+POST http://localhost:3001/api/persons HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Hemanth",
+    "number": "12-1123456"
+}
+
+### success validation request check for min number length of 8 & number format DDD-DDD,,,
+
+POST http://localhost:3001/api/persons HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Hemanth",
+    "number": "123-1123456"
+}
+
+###  failed validation request check for duplicate names
+
+POST http://localhost:3001/api/persons HTTP/1.1
+content-type: application/json
+
+{
+    "name": "hemanth",
+    "number": "313-35564645"
+}
