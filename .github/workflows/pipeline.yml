@@ -29,8 +29,8 @@ jobs:
       - name: build
         run: cd ./phonebook-backend && npm run build:ui
       - name: e2e tests
-        uses: cd ./phonebook-backend && cypress-io/github-action@v4
+        uses: cypress-io/github-action@v4
         with:
-          build: npm run build:ui
-          start: npm run start
+          build: cd ./phonebook-backend && npm run build:ui
+          start: cd ./phonebook-backend && npm run start
           wait-on: 'http://localhost:3001'
