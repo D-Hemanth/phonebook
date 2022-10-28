@@ -2,16 +2,17 @@ const mongoose = require('mongoose')
 
 // when using .env variable to store the url, make sure to add config variable of MONGODB_URI for heroku
 // eslint-disable-next-line no-undef
-const url = process.env.MONGODB_URI
+const url = process.env.MONGODB_URI || `${secrets.MONGODB_URI}`
 
 console.log('connecting to', url)
 
-mongoose.connect(url)
+mongoose
+  .connect(url)
   // eslint-disable-next-line no-unused-vars
-  .then(result => {
+  .then((result) => {
     console.log('connected to MongoDB')
   })
-  .catch(error => {
+  .catch((error) => {
     console.log('error connecting to MongoDB:', error.message)
   })
 
@@ -22,20 +23,21 @@ const phonebookSchema = new mongoose.Schema({
   name: {
     type: String,
     minlength: 3,
-    required: true
+    required: true,
   },
   number: {
     type: String,
     validate: {
-      validator: function(v) {
+      validator: function (v) {
         // [1-9][0-9][0-9] will match double digit number from 100 to 999 & \d+ or \d{1,} matches with atleast 1 or more number
         return /[1-9][0-9][0-9]-\d{1,}/.test(v)
       },
-      message: props => `${props.value} is not a valid phone number of format DD-DDDDDD... or DDD-DDDDD,,,`
+      message: (props) =>
+        `${props.value} is not a valid phone number of format DD-DDDDDD... or DDD-DDDDD,,,`,
     },
     minlength: 8,
-    required: true
-  }
+    required: true,
+  },
 })
 
 // to remove unique id field _id & mongo versioning field __v from the frontend output
@@ -47,7 +49,7 @@ phonebookSchema.set('toJSON', {
     returnedObject.id = returnedObject._id.toString()
     delete returnedObject._id
     delete returnedObject.__v
-  }
+  },
 })
 
 // Create a Person document model from the schema variable
