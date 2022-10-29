@@ -35,4 +35,4 @@ jobs:
         with:
           build: npm run build:ui
           start: npm run start
-          wait-on: 'http://localhost:3000'
+          wait-on: http://localhost:3000
