@@ -31,7 +31,7 @@ jobs:
       - name: e2e tests
         uses: cypress-io/github-action@v4
         env:
-          MONGODB_URI: ${{secret.MONGODB_URI}}
+          MONGODB_URI: ${{secrets.MONGODB_URI}}
         with:
           build: npm run build:ui
           start: npm run start
