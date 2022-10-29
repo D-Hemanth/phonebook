@@ -36,5 +36,5 @@ jobs:
           # working-directory: phonebook-frontend/cypress/e2e
           build: npm run build:ui
           start: npm run start
-          cypress: cd ../phonebook-frontend/ && npm run cypress run
+          command: cd ../phonebook-frontend/ && npm run cypress run
           wait-on: http://localhost:3000
