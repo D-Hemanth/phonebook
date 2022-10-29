@@ -9,6 +9,7 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 'latest',
   },
+  plugins: ['cypress'],
   rules: {
     indent: ['error', 2],
     'linebreak-style': ['error', 'unix'],
