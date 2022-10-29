@@ -18,20 +18,19 @@ jobs:
         run: |
           ls -l
       - name: npm install backend
-        run: cd ./phonebook-backend && npm install
+        run: npm install
       # - name: Directory content after using cd in previous command
       #   run: |
       #     ls -l
       - name: npm install frontend
         run: cd ./phonebook-frontend && npm install
       - name: npm lint
-        run: cd ./phonebook-backend && npm run lint
+        run: npm run lint
       - name: build
-        run: cd ./phonebook-backend && npm run build:ui
+        run: npm run build:ui
       - name: e2e tests
         uses: cypress-io/github-action@v4
         with:
-          project: ./phonebook-backend
-          build: cd ./phonebook-backend && npm run build:ui
-          start: cd ./phonebook-backend && npm run start
+          build: npm run build:ui
+          start: npm run start
           wait-on: 'http://localhost:3001'
