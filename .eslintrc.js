@@ -3,12 +3,12 @@ module.exports = {
     browser: true,
     commonjs: true,
     es2021: true,
+    'cypress/globals': true,
   },
   extends: 'eslint:recommended',
   parserOptions: {
     ecmaVersion: 'latest',
   },
-  plugins: ['cypress'],
   rules: {
     indent: ['error', 2],
     'linebreak-style': ['error', 'unix'],
