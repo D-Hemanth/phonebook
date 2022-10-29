@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 // when using .env variable to store the url, make sure to add config variable of MONGODB_URI for heroku
 // eslint-disable-next-line no-undef
-const url = process.env.MONGODB_URI || `${secrets.MONGODB_URI}`
+const url = process.env.MONGODB_URI
 
 console.log('connecting to', url)
 
