@@ -11,8 +11,7 @@
     "deploy": "git push heroku main",
     "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && npm run deploy",
     "logs:prod": "heroku logs --tail",
-    "lint": "eslint .",
-    "cypress:open": "cypress open"
+    "lint": "eslint ."
   },
   "author": "Hemanth D",
   "license": "MIT",
@@ -24,7 +23,6 @@
     "morgan": "^1.10.0"
   },
   "devDependencies": {
-    "cypress": "^10.11.0",
     "eslint": "^8.16.0",
     "nodemon": "^2.0.16"
   }
