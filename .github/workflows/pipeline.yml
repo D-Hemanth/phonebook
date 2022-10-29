@@ -30,10 +30,9 @@ jobs:
         run: npm run build:ui
       - name: e2e tests
         uses: cypress-io/github-action@v4
-
         with:
-          build: npm run build:ui
           env:
             MONGODB_URI: ${{secrets.MONGODB_URI}}
+          build: npm run build:ui
           start: npm run start
           wait-on: 'http://localhost:3001'
