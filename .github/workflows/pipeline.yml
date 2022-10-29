@@ -31,7 +31,7 @@ jobs:
       - name: e2e tests
         env:
           MONGODB_URI: ${{secrets.MONGODB_URI}}
-        uses: cypress-io/github-action@v3.1.0 # cypress-io/github-action@v4 => causing error cypress not found
+        uses: cypress-io/github-action@v4.2.0 # cypress-io/github-action@v4 => causing error cypress not found
         with:
           build: npm run build:ui
           start: npm run start
